@@ -1,0 +1,5 @@
+{
+  "apps/backend/**/*.ts": ["eslint --config apps/backend/eslint.config.mjs --fix", "prettier --write"],
+  "apps/frontend/**/*.{ts,tsx}": ["eslint --fix", "prettier --write"],
+  "packages/**/*.ts": ["eslint --fix", "prettier --write"]
+}

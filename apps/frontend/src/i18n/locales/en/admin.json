@@ -1,0 +1,32 @@
+{
+  "dashboard": {
+    "title": "Dashboard",
+    "description": "Overview of membership activity",
+    "totalMembers": "Total Members",
+    "pendingApplications": "Pending Applications",
+    "actionItems": "Action Items",
+    "pendingReview": "Applications pending review",
+    "pendingReviewDescription": "Need in-person DL verification + admin approval",
+    "allCaughtUp": "No action items — all caught up!",
+    "resetDemo": "Reset Demo",
+    "resetting": "Resetting...",
+    "resetConfirmTitle": "Reset Demo Data?",
+    "resetConfirmDescription": "This will delete all members, documents, and other demo data, then reseed with fresh sample data. Admin accounts will be preserved."
+  },
+  "members": {
+    "title": "Members",
+    "import": "Import CSV",
+    "export": "Export CSV",
+    "downloadTemplate": "Download Template",
+    "importSuccess": "Import completed: {{imported}} imported, {{skipped}} skipped",
+    "exportSuccess": "Export downloaded"
+  },
+  "reports": {
+    "title": "Reports & Analytics",
+    "description": "Membership insights",
+    "membershipGrowth": "Membership Growth (12 months)",
+    "statusDistribution": "Status Distribution",
+    "byCounty": "Members by County (Top 20)",
+    "memberTypeDistribution": "Member Type Distribution"
+  }
+}

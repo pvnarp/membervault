@@ -1,0 +1,17 @@
+echo "Running full test suite before push..."
+
+cd apps/backend && npm test -- --passWithNoTests
+if [ $? -ne 0 ]; then
+  echo "Backend tests failed. Push aborted."
+  exit 1
+fi
+cd ../..
+
+cd packages/shared-types && npm run build
+if [ $? -ne 0 ]; then
+  echo "Shared types build failed. Push aborted."
+  exit 1
+fi
+cd ../..
+
+echo "All tests passed. Pushing..."

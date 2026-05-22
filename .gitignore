@@ -1,0 +1,63 @@
+# =============================================================================
+# Membership App — .gitignore
+# =============================================================================
+
+# Environment
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Dependencies
+node_modules/
+
+# Build artifacts
+dist/
+build/
+*.tsbuildinfo
+
+# Turbo
+.turbo
+
+# Drizzle
+apps/backend/drizzle/
+
+# Uploads (user documents)
+uploads/
+
+# Test & Coverage
+coverage/
+*.lcov
+.nyc_output/
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Docker volumes (local)
+postgres-data/
+postgres-dev-data/
+
+# Database backups (keep .gitkeep)
+backups/*.sql.gz
+backups/weekly/
+
+# Claude Code (local permissions)
+.claude/settings.local.json
+
+# Workspace lock files (root lock file is the only valid one)
+apps/*/package-lock.json
+
+# Temporary
+*.tmp
+*.temp
+.cache/

@@ -1,0 +1,114 @@
+{
+  "app": {
+    "name": "Membership",
+    "portal": "Membership Portal"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "members": "Members",
+    "changeRequests": "Change Requests",
+    "adminUsers": "Admin Users",
+    "emailTemplates": "Email Templates",
+    "auditLog": "Audit Log",
+    "reports": "Reports",
+    "profile": "My Profile",
+
+    "organization": "Organization",
+    "system": "System Health",
+    "systemDescription": "Database, Redis, memory status",
+    "usersAndRoles": "Users & Roles",
+    "quickLinks": "Quick Links"
+  },
+  "actions": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "confirm": "Confirm",
+    "approve": "Approve",
+    "reject": "Reject",
+    "search": "Search",
+    "export": "Export",
+    "import": "Import",
+    "reload": "Reload",
+    "submit": "Submit",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous"
+  },
+  "status": {
+    "loading": "Loading...",
+    "noResults": "No results found.",
+    "error": "Something went wrong",
+    "success": "Success",
+    "pending": "Pending",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "suspended": "Suspended",
+    "inactive": "Inactive"
+  },
+  "auth": {
+    "login": "Sign In",
+    "logout": "Sign Out",
+    "email": "Email",
+    "password": "Password",
+    "magicLink": "Send Magic Link",
+    "demoLogin": "Demo Login",
+    "alreadyMember": "Already a member?",
+    "adminLogin": "Admin login",
+    "memberLogin": "Member Login",
+    "magicLinkDescription": "Sign in with a magic link sent to your email",
+    "magicLinkGenerated": "Magic link generated! Click below to log in.",
+    "checkEmail": "Check your email for a login link. It expires in 15 minutes.",
+    "openMagicLink": "Open Magic Link",
+    "sendAnotherLink": "Send another link",
+    "sending": "Sending...",
+    "sendLoginLink": "Send Login Link",
+    "or": "or",
+    "loggingIn": "Logging in...",
+    "loginAsDemo": "Login as Demo Member",
+    "applyForMembership": "Apply for membership",
+    "adminLoginTitle": "Admin Login",
+    "signInAdmin": "Sign in to the admin dashboard",
+    "enterVerificationCode": "Enter your verification code",
+    "enterEmailReset": "Enter your email to receive a reset link",
+    "setNewPassword": "Set your new password",
+    "signingIn": "Signing in...",
+    "forgotPassword": "Forgot password?",
+    "sendResetLink": "Send Reset Link",
+    "backToLogin": "Back to login",
+    "newPassword": "New Password",
+    "minChars": "Minimum 12 characters",
+    "resetting": "Resetting...",
+    "resetPassword": "Reset Password",
+    "twoFactorAuth": "Two-Factor Authentication",
+    "verificationCode": "Verification Code",
+    "verifying": "Verifying...",
+    "verify": "Verify",
+    "memberLoginLink": "Member login"
+  },
+
+  "notifications": {
+    "title": "Notifications",
+    "markAllRead": "Mark all read",
+    "empty": "No notifications"
+  },
+  "pagination": {
+    "page": "Page {{current}} of {{total}}"
+  },
+  "theme": {
+    "toggle": "Toggle theme"
+  },
+  "footer": {
+    "copyright": "Membership Portal"
+  },
+  "accessibility": {
+    "skipToContent": "Skip to content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "expandSidebar": "Expand sidebar",
+    "collapseSidebar": "Collapse sidebar"
+  }
+}

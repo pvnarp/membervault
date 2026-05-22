@@ -1,0 +1,46 @@
+{
+  "dashboard": {
+    "title": "My Dashboard",
+    "membershipStatus": "Membership Status",
+    "quickLinks": "Quick Links",
+    "viewEditProfile": "View / Edit Profile"
+  },
+  "profile": {
+    "title": "My Profile",
+    "status": "Status",
+    "memberType": "Member Type",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "memberSince": "Member Since",
+    "personalInfo": "Personal Information",
+    "personalInfoDescription": "To change your name, address, or DL number, submit a change request below for admin review.",
+    "contactInfo": "Contact Information",
+    "contactInfoDescription": "You can update your phone and email directly.",
+    "requestChange": "Request Profile Change",
+    "requestChangeDescription": "Changes below require admin approval. Leave fields empty to keep current values.",
+    "qrCode": "My QR Code",
+    "qrCodeDescription": "Show this QR code for quick member lookup."
+  },
+  "registration": {
+    "title": "Membership Application",
+    "subtitle": "Apply for membership online",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "phone": "Phone",
+    "dob": "Date of Birth",
+    "gender": "Gender",
+    "streetAddress": "Street Address",
+    "city": "City",
+    "state": "State",
+    "zipCode": "Zip Code",
+    "county": "County",
+    "submitApplication": "Submit Application",
+    "submitting": "Submitting...",
+    "dlDisclaimer": "Please enter your details exactly as they appear on your Driver's License. You will need to visit the office in person with a valid DL for final identity verification before your membership is approved.",
+    "privacyNotice": "By submitting this application, you agree to provide accurate information. Your personal data is encrypted and stored securely.",
+    "alreadyMember": "Already a member?",
+    "adminLogin": "Admin login"
+  }
+}

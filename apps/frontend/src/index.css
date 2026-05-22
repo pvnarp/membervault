@@ -1,0 +1,255 @@
+@import "tailwindcss";
+
+/* Native select/option dark mode support */
+select option {
+  background-color: hsl(var(--popover));
+  color: hsl(var(--popover-foreground));
+}
+
+/* Skip to content link — visible only on focus */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  padding: 0.5rem 1rem;
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border-radius: var(--radius);
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+.skip-to-content:focus {
+  top: 0.5rem;
+}
+
+/* Recharts SVG text visibility in dark mode.
+   Recharts renders <text> elements with inherited or inline fill colors.
+   Using !important on style attribute via CSS specificity to guarantee visibility. */
+.dark .recharts-cartesian-axis-tick text,
+.dark .recharts-label,
+.dark .recharts-legend-item-text {
+  fill: #d1d5db !important;
+}
+.dark .recharts-cartesian-axis-tick text[style],
+.dark .recharts-label[style] {
+  fill: #d1d5db !important;
+}
+
+/* Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap');
+
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: 'Geist', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, monospace;
+}
+
+/* ============================================================
+   DARK MODE — Rich Coffee / Dark Leather
+   Warm charcoal-brown base, amber/copper accent
+   ============================================================ */
+
+:root {
+  --radius: 0.625rem;
+
+  /* Backgrounds — warm dark brown, not cold gray */
+  --background: oklch(0.16 0.01 60);
+  --foreground: oklch(0.90 0.01 75);
+
+  /* Cards — slightly lifted warm surface */
+  --card: oklch(0.19 0.012 60);
+  --card-foreground: oklch(0.90 0.01 75);
+
+  /* Popover */
+  --popover: oklch(0.20 0.015 60);
+  --popover-foreground: oklch(0.90 0.01 75);
+
+  /* Primary — warm amber/copper */
+  --primary: oklch(0.75 0.15 65);
+  --primary-foreground: oklch(0.15 0.01 60);
+
+  /* Secondary — warm dark surface */
+  --secondary: oklch(0.23 0.012 60);
+  --secondary-foreground: oklch(0.85 0.01 75);
+
+  /* Muted — subtle warm gray */
+  --muted: oklch(0.22 0.01 60);
+  --muted-foreground: oklch(0.58 0.02 65);
+
+  /* Accent — warm hover state */
+  --accent: oklch(0.24 0.015 60);
+  --accent-foreground: oklch(0.90 0.01 75);
+
+  /* Destructive — terracotta / burnt sienna */
+  --destructive: oklch(0.58 0.18 25);
+  --destructive-foreground: oklch(0.95 0.01 60);
+
+  /* Borders — very subtle warm edge */
+  --border: oklch(0.26 0.012 60);
+  --input: oklch(0.26 0.012 60);
+  --ring: oklch(0.75 0.15 65);
+
+  /* Sidebar */
+  --sidebar: oklch(0.14 0.01 60);
+  --sidebar-foreground: oklch(0.85 0.01 75);
+
+  color-scheme: dark;
+}
+
+/* ============================================================
+   LIGHT MODE — Warm Cream / Linen / Parchment
+   ============================================================ */
+
+.light {
+  --background: oklch(0.975 0.005 80);
+  --foreground: oklch(0.22 0.02 55);
+
+  --card: oklch(0.99 0.003 80);
+  --card-foreground: oklch(0.22 0.02 55);
+
+  --popover: oklch(0.99 0.003 80);
+  --popover-foreground: oklch(0.22 0.02 55);
+
+  --primary: oklch(0.62 0.16 55);
+  --primary-foreground: oklch(0.99 0.005 80);
+
+  --secondary: oklch(0.95 0.008 75);
+  --secondary-foreground: oklch(0.30 0.02 55);
+
+  --muted: oklch(0.94 0.007 75);
+  --muted-foreground: oklch(0.50 0.02 60);
+
+  --accent: oklch(0.94 0.008 75);
+  --accent-foreground: oklch(0.25 0.02 55);
+
+  --destructive: oklch(0.55 0.18 25);
+  --destructive-foreground: oklch(0.99 0.005 80);
+
+  --border: oklch(0.90 0.008 75);
+  --input: oklch(0.90 0.008 75);
+  --ring: oklch(0.62 0.16 55);
+
+  --sidebar: oklch(0.97 0.006 80);
+  --sidebar-foreground: oklch(0.22 0.02 55);
+
+  color-scheme: light;
+}
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html, body, #root {
+    height: 100%;
+  }
+}
+
+/* ============================================================
+   GLOW UTILITIES — warm amber glows
+   ============================================================ */
+
+@layer utilities {
+  .glow-sm {
+    box-shadow: 0 0 10px oklch(0.75 0.15 65 / 0.15);
+  }
+  .glow-md {
+    box-shadow: 0 0 24px oklch(0.75 0.15 65 / 0.12);
+  }
+  .glow-lg {
+    box-shadow: 0 0 48px oklch(0.75 0.15 65 / 0.08);
+  }
+  .glow-success {
+    box-shadow: 0 0 12px oklch(0.65 0.12 145 / 0.2);
+  }
+  .glow-warning {
+    box-shadow: 0 0 12px oklch(0.75 0.15 65 / 0.2);
+  }
+  .glow-destructive {
+    box-shadow: 0 0 12px oklch(0.58 0.18 25 / 0.2);
+  }
+}
+
+/* ============================================================
+   SCROLLBAR — warm tones
+   ============================================================ */
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: oklch(0.35 0.01 60);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.45 0.02 60);
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: oklch(0.82 0.01 75);
+}
+
+.light ::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.72 0.02 65);
+}

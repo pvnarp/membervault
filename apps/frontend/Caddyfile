@@ -1,0 +1,42 @@
+{$DOMAIN:localhost} {
+	# TLS — automatic HTTPS via Let's Encrypt in production
+	# On localhost, Caddy serves HTTP or self-signed certs automatically
+	encode gzip zstd
+
+	# Security headers
+	header {
+		X-Frame-Options "SAMEORIGIN"
+		X-Content-Type-Options "nosniff"
+		X-XSS-Protection "1; mode=block"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+		-Server
+	}
+
+	# Proxy API calls to backend
+	handle /api/* {
+		reverse_proxy backend:3000 {
+			header_up Host {host}
+			header_up X-Real-IP {remote_host}
+			header_up X-Forwarded-For {remote_host}
+			header_up X-Forwarded-Proto {scheme}
+		}
+	}
+
+	# Serve static frontend files + SPA fallback
+	handle {
+		root * /srv
+
+		# Cache static assets (30 days, immutable)
+		@static path *.js *.css *.png *.jpg *.jpeg *.gif *.ico *.svg *.woff *.woff2
+		header @static Cache-Control "public, max-age=2592000, immutable"
+
+		try_files {path} /index.html
+		file_server
+	}
+
+	# File upload limit (10MB)
+	request_body {
+		max_size 10MB
+	}
+}
