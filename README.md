@@ -295,7 +295,6 @@ After running `npm run db:seed`, the following accounts are available:
 | Super Admin | `admin@example.org` | `AdminPass123!` | `/admin/login` |
 | Membership Manager | `manager@example.org` | `ManagerPass123!` | `/admin/login` |
 | Viewer | `viewer@example.org` | `ViewerPass123!` | `/admin/login` |
-| Member | `raj.patel2@example.com` | `MemberPass123!` | `/login` |
 
 ---
 
