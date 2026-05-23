@@ -1,12 +1,14 @@
 # =============================================================================
-# Membership App — .gitignore
+# MemberVault — .gitignore
 # =============================================================================
 
-# Environment
+# Environment — never commit secrets
 .env
 .env.local
+.env.production
 .env.*.local
 !.env.example
+!.env.production.example
 
 # Dependencies
 node_modules/
@@ -16,46 +18,59 @@ dist/
 build/
 *.tsbuildinfo
 
-# Turbo
-.turbo
+# Turborepo
+.turbo/
 
-# Drizzle
+# Drizzle generated migrations (regenerate with drizzle-kit generate)
 apps/backend/drizzle/
 
-# Uploads (user documents)
+# Uploaded user documents
 uploads/
 
-# Test & Coverage
+# Test output
 coverage/
 *.lcov
 .nyc_output/
+playwright-report/
+test-results/
+blob-report/
 
 # IDE
 .vscode/
 .idea/
 *.iml
 
-# OS files
+# OS
 .DS_Store
 Thumbs.db
+desktop.ini
 
 # Logs
 *.log
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pino-pretty.log
 
-# Docker volumes (local)
+# Docker local volumes
 postgres-data/
 postgres-dev-data/
+redis-data/
+grafana-data/
+caddy-data/
+caddy-config/
 
-# Database backups (keep .gitkeep)
+# Database backups (keep directory via .gitkeep)
 backups/*.sql.gz
 backups/weekly/
 
-# Claude Code (local permissions)
-.claude/settings.local.json
+# k6 output
+k6-output*.json
+k6-summary*.json
 
-# Workspace lock files (root lock file is the only valid one)
+# Workspace lock files — only root lock file is tracked
 apps/*/package-lock.json
+packages/*/package-lock.json
 
 # Temporary
 *.tmp

@@ -7,6 +7,13 @@ if [ $? -ne 0 ]; then
 fi
 cd ../..
 
+cd apps/frontend && npm test -- --passWithNoTests
+if [ $? -ne 0 ]; then
+  echo "Frontend tests failed. Push aborted."
+  exit 1
+fi
+cd ../..
+
 cd packages/shared-types && npm run build
 if [ $? -ne 0 ]; then
   echo "Shared types build failed. Push aborted."
