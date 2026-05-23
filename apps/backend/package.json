@@ -27,7 +27,7 @@
     "csv-parse": "^5.6.0",
     "csv-stringify": "^6.5.2",
     "dotenv": "^17.3.1",
-    "drizzle-orm": "^0.44.0",
+    "drizzle-orm": "^0.45.2",
     "exceljs": "^4.4.0",
     "hono": "^4.7.0",
     "ioredis": "^5.6.1",
